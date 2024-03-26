@@ -1,0 +1,44 @@
+<!-- 
+Author: Igor Gabriel Bezerra Bernardon, John Ko, Khamdam Kadirov, Sherali Ozodov
+Date: 12/06/2023 
+Class: CSC 337
+File: profile.html
+
+Decpription: 
+   This html file contains the profile page for the Recipe Book website where users can edit their profile information
+   such as their profile picture, first name, last name, and bio. The page also contains a button to save the profile.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+    <link rel="stylesheet" href="profile.css">
+</head>
+<body>
+    <div class="profile-container">
+        <form id="profileForm" enctype="multipart/form-data">
+            <div class="profile-picture">
+                <img id="profileImage" src="default_profile.png" alt="Profile Picture">
+                <input type="file" id="imageUpload" name="profileImage" accept="image/*">
+            </div>
+            <div class="form-group">
+                <label for="firstName">First Name</label>
+                <input type="text" id="firstName" name="firstName" required>
+            </div>
+            <div class="form-group">
+                <label for="lastName">Last Name</label>
+                <input type="text" id="lastName" name="lastName" required>
+            </div>
+            <div class="form-group">
+                <label for="bio">Bio</label>
+                <textarea id="bio" name="bio"></textarea>
+            </div>
+            <button type="submit">Save Profile</button>
+        </form>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

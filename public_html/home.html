@@ -1,0 +1,102 @@
+<!-- 
+Author: Igor Gabriel Bezerra Bernardon, John Ko, Khamdam Kadirov, Sherali Ozodov
+Date: 12/06/2023 
+Class: CSC 337
+File: home.html
+
+Description: 
+    This html file contains the home page for the Recipe Book website where users can view all the recipes
+    that have been posted by other users. The page also contains a search bar where users can search for
+    recipes by name, a button that leads to add a recipe page, and a button to filter the recipes by category and sort them
+    by number of likes.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="homeStyle.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>RecipeBook</title>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="nav-logo"></div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="myprofile.html">My Profile</a></li>
+                <li><a href="createpost.html">Add Recipe</a></li>
+            </ul>
+            <div class="user-container">
+                <button onclick="logOut()" class="userContent" id="logout">Log Out</button>
+            </div>
+        </nav>
+    </header>
+    
+    <aside class="filter-sidebar">
+        <div id="filterHead">
+            <h2 id="headerF">Filter Recipes</h2>
+            <button onclick="applyFilter()" id="applyButton">Apply Filter</button>
+        </div>
+        <br>
+        <form id="filterForm">
+            <label id="mealType">
+                <h4>Category</h4>
+                <br>
+                <label><input type="radio" name="meal" value="Default" class="mealBtn" checked> Default</label><br>
+                <label><input type="radio" name="meal" value="Soup" class="mealBtn"> Soup</label><br>
+                <label><input type="radio" name="meal" value="Pan-fried" class="mealBtn"> Pan-Fried</label><br>
+                <label><input type="radio" name="meal" value="Steamed" class="mealBtn"> Steamed</label><br>
+                <label><input type="radio" name="meal" value="MainDish" class="mealBtn"> Main Dish</label><br>
+                <label><input type="radio" name="meal" value="Dessert" class="mealBtn"> Dessert</label><br>
+                <label><input type="radio" name="meal" value="Vegan" class="mealBtn"> Vegan</label><br>
+                <label><input type="radio" name="meal" value="Grilled" class="mealBtn"> Grilled</label><br>
+                <label><input type="radio" name="meal" value="Other" class="mealBtn"> Other</label><br>
+            </label>
+            <br>
+            <label id="sortBy">
+                <h4>Sort By</h4>
+                <br>
+                <label><input type="radio" name="sort" value="Default" class="sortBtn" checked> Default</label><br>
+                <label><input type="radio" name="sort" value="Most Likes" class="sortBtn"> High Likes</label><br>
+                <label><input type="radio" name="sort" value="User Liked" class="sortBtn"> User Liked</label><br>
+            </label>
+            <br>
+        </form>
+    </aside>
+
+    <main>
+        <input type="text" id="searchInput" placeholder="Search for your meal!">
+        <button onclick="searchRecipe()" id="searchBtn">
+            <i class="fas fa-search"></i>
+        </button>
+        <button onclick="showUserPost()" class="userContent">My Recipes</button>
+        <button class="create-listing-btn" onclick="createRecipe()">Add a Recipe</button>
+        <section id="recipe-feed">
+           
+        </section>
+    </main>
+
+    <div id="commentModal" data-recipe-id="">
+        <div class="modal-content">
+          <p>Comment Section</p>
+          <div id="commentsContainer">
+            <div class="comment">
+            </div>
+          </div>
+          <form id="commentForm">
+            <textarea id="commentText" placeholder="Put the comments"></textarea>
+            <button type="submit" id="submitBtn">Submit</button>
+          </form>
+          <button class="close-button" onclick="closeCommentModal()">Close</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+    <script>
+        function createRecipe() {
+            window.location.href = "createpost.html"
+        }
+    </script>
+</body>
+</html>

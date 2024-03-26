@@ -1,0 +1,90 @@
+<!-- 
+Author: Igor Gabriel Bezerra Bernardon, John Ko, Khamdam Kadirov, Sherali Ozodov
+Date: 12/06/2023 
+Class: CSC 337
+File: createpost.html
+
+Decpription: 
+  This markup file contains the create post page for the Recipe Book website where users can create a new post/recipe.
+  The page contains a form where users can enter the title, category, time to prepare, approximate calories, difficulty level,
+  recipe instructions, and an image of the recipe. The page also contains a button to submit the recipe.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post a Recipe</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
+  <body>
+    <div class="post-container">
+      <div class="graphics-section"></div>
+      <div class="form-section">
+        <div class="form-header">
+          <h1>Post Recipe</h1>
+        </div>
+        <div class="form-inner">
+          <form enctype="multipart/form-data" class="recipeForm">
+            <input
+              type="text"
+              name="title"
+              id="title"
+              placeholder="Recipe Title"
+              class="post-input"
+              required>
+            <select id="category" name="category" class="post-input" required>
+              <option value="" disabled selected style="display: none">
+                Select Category
+              </option>
+              <option value="Soup">Soup</option>
+              <option value="Pan-fried">Pan-Fried</option>               
+              <option value="Steamed">Steamed</option>               
+              <option value="MainDish">Main Dish</option>               
+              <option value="Dessert">Dessert</option>               
+              <option value="Vegan">Vegan</option>               
+              <option value="Grilled">Grilled</option>
+              <option value="Other">Other</option>
+            </select>
+            <input
+              type="text"
+              name="time"
+              id="time"
+              placeholder="Time to Prepare (e.g., 30 mins)"
+              class="post-input" required>
+            <input
+              type="number"
+              name="calories"
+              id="calories"
+              placeholder="Approximate Calories"
+              class="post-input" required>
+            <input
+              type="text"
+              name="difficulty"
+              id="difficulty"
+              placeholder="Difficulty Level (e.g., Easy, Hard)"
+              class="post-input" required>
+            <textarea
+              name="content"
+              id="content"
+              placeholder="Recipe Instructions"
+              class="post-input"
+              rows="6"
+              required>
+            </textarea>
+            <input
+            type="file"
+            name="image"
+            id="image"
+            class="post-input"
+            required>
+            <button type="submit" class="post-btn">Submit Recipe</button>
+            <span id="submissionStatus"></span>
+          </form>
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
